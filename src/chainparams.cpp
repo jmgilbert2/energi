@@ -74,6 +74,8 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 41540; // Energi: monthly (estimated) with 1 minute blocks. From the original Dash comment, DGW V3 reduces the number of blocks mined by about 5% so 43200 becomes 41540.
         consensus.nMasternodePaymentsStartBlock = 240;
+		consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value		Energi: Unused
+		consensus.nMasternodePaymentsIncreasePeriod = 576 * 30; // 17280 - actual historical value		Energi: Unused
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 328008; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 41540; // ##Energi+- In Dash, the comment just repeated the calculation for consensus.nSuperblockCycle so we just set it to the same value
@@ -196,6 +198,8 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 41540;
         consensus.nMasternodePaymentsStartBlock = 240;
+		consensus.nMasternodePaymentsStartBlock = 10000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock		Energi: Unused
+		consensus.nMasternodePaymentsIncreaseBlock = 46000; //		Energi: Unused
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 60000;
         consensus.nBudgetPaymentsCycleBlocks = 125;
@@ -301,6 +305,8 @@ public:
         strNetworkID = "regtest";
         consensus.nSubsidyHalvingInterval = 150;
         consensus.nMasternodePaymentsStartBlock = 240;
+		consensus.nMasternodePaymentsIncreaseBlock = 350; //Energi: Unused
+		consensus.nMasternodePaymentsIncreasePeriod = 10; //Energi: Unused
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 1000;
         consensus.nBudgetPaymentsCycleBlocks = 50;
