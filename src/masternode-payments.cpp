@@ -220,8 +220,8 @@ void FillBlockPayments(CMutableTransaction& txNew, int nBlockHeight, const Conse
 
     // FILL BLOCK PAYEE WITH MASTERNODE PAYMENT OTHERWISE
     mnpayments.FillBlockPayee(txNew, nBlockHeight, consensusParams, txoutMasternodeRet);
-    LogPrint("mnpayments", "FillBlockPayments -- nBlockHeight %d blockReward %lld txoutMasternodeRet %s txNew %s",
-                            nBlockHeight, blockReward, txoutMasternodeRet.ToString(), txNew.ToString());
+    LogPrint("mnpayments", "FillBlockPayments -- nBlockHeight %d txoutMasternodeRet %s txNew %s",
+                            nBlockHeight, txoutMasternodeRet.ToString(), txNew.ToString());
 }
 
 std::string GetRequiredPaymentsString(int nBlockHeight)
