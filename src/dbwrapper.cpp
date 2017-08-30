@@ -12,7 +12,7 @@
 #include <leveldb/cache.h>
 #include <leveldb/env.h>
 #include <leveldb/filter_policy.h>
-#include <memenv.h>
+//#include <memenv.h>
 #include <stdint.h>
 
 void HandleError(const leveldb::Status& status) throw(dbwrapper_error)
@@ -55,7 +55,7 @@ CDBWrapper::CDBWrapper(const boost::filesystem::path& path, size_t nCacheSize, b
     options = GetOptions(nCacheSize);
     options.create_if_missing = true;
     if (fMemory) {
-        penv = leveldb::NewMemEnv(leveldb::Env::Default());
+		penv = nullptr;// leveldb::NewMemEnv(leveldb::Env::Default());
         options.env = penv;
     } else {
         if (fWipe) {

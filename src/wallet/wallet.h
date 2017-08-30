@@ -169,6 +169,15 @@ public:
 
 struct CRecipient
 {
+	CRecipient() = default;
+	CRecipient(const CRecipient&) = default;
+	CRecipient(CRecipient&&) = default;
+	CRecipient(const CScript& pubKey, CAmount amount, bool subtractFeeFromAmount)
+		: scriptPubKey(pubKey), nAmount(amount), fSubtractFeeFromAmount(subtractFeeFromAmount) {}
+
+	CRecipient& operator= (const CRecipient&) = default;
+	CRecipient& operator= (CRecipient&&) = default;
+
     CScript scriptPubKey;
     CAmount nAmount;
     bool fSubtractFeeFromAmount;
